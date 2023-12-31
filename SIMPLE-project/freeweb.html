@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my websit</title>
+  <link rel="stylesheet" href="frewb.css">
+</head>
+<body>
+  <section id="userInput" class="userSection">
+    <div class="control">
+      <label>First Name</label>
+      <input id="txtfname" class="txtbox" type="txt" value="">
+    </div>
+    <div class="control">
+      <label>Last Name</label>
+      <input id="txtlname" class="txtbox" type="txt" value="">
+    </div>
+    <div class="control">
+      <button onclick="getUserData();" class="btn">submit</button>
+    </div>
+  </section>
+  <section id="userOutPut" class="userSection">
+      <h1>About Users</h1>
+      <h2>Your Full Name</h2>
+      <p id="pUserName"></p>
+      <button onclick="goHome();" class="btn">Back to Home</button>
+  </section>
+
+  <script>
+var fname = document.getElementById("txtfname");
+    var lname = document.getElementById("txtlname");
+    var userName=document.getElementById("pUserName");
+    var secUserInpt=document.getElementById("userInput");
+    var secUserOpt=document.getElementById("userOutPut");
+    function getUserData() {
+      var fstName=fname.value;
+      var lstName=lname.value;
+      if (fstName!=="" &&lstName!=="") {
+     userName.innerHTML="WELCOME: " + fstName+" "+lstName;
+     secUserInpt.style.display="none";
+     secUserOpt.style.display="block";
+      }
+    }
+    
+    function goHome() {
+     secUserInpt.style.display="block";
+     secUserOpt.style.display="none";
+    }    
+
+  </script>
+  
+</body>
+</html>
